@@ -10,8 +10,8 @@ public class Controller {
 	public static String HELLO_VALUE_PATTERN = "Hello";
 	public static String WORLD_VALUE_PATTERN = "world!";
 
-	Model model;
-	View view;
+	private Model model;
+	private View view;
 
 	public Controller(Model model, View view) {
 		this.model = model;
