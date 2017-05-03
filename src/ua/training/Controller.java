@@ -20,9 +20,8 @@ public class Controller {
 
 	public void processUserInput() {
 		Scanner scanner = new Scanner(System.in);
-		model.setHelloValue(processHelloInput(scanner));
-		model.setWorldValue(processWorldInput(scanner));
 
+		model.setHelloWorldValue(processHelloInput(scanner), processWorldInput(scanner));
 		view.printGreetingMessage(View.HELLO_WORLD_VALUE, model.generateHelloWorldStatement());
 	}
 

@@ -3,11 +3,8 @@
 
 .project
 .metadata
-/bin/
-/build/
-bin/**
-tmp/**
-tmp/**/*
+bin/
+build/
 .classpath
 .settings/
 
