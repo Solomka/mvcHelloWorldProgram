@@ -7,8 +7,8 @@ import java.util.Scanner;
  */
 public class Controller {
 
-	public static String HELLO_VALUE_PATTERN = "Hello";
-	public static String WORLD_VALUE_PATTERN = "world!";
+	static String HELLO_VALUE_PATTERN = "Hello";
+	static String WORLD_VALUE_PATTERN = "world!";
 
 	private Model model;
 	private View view;
@@ -18,29 +18,24 @@ public class Controller {
 		this.view = view;
 	}
 
-	public void processUserInput() {
+	public void processUser() {
 		Scanner scanner = new Scanner(System.in);
 
-		model.setHelloWorldValue(processHelloInput(scanner), processWorldInput(scanner));
+		String hello = processUserInput(scanner, View.INPUT_HELLO_VALUE, HELLO_VALUE_PATTERN);
+		String world = processUserInput(scanner, View.INPUT_WORLD_VALUE, WORLD_VALUE_PATTERN);
+
+		model.setHelloWorldValue(hello, world);
 		view.printGreetingMessage(View.HELLO_WORLD_VALUE, model.generateHelloWorldStatement());
 	}
 
-	private String processHelloInput(Scanner scanner) {
-		view.printMessage(View.INPUT_HELLO_VALUE);
-		while (!scanner.hasNext(HELLO_VALUE_PATTERN)) {
-			view.printMessage(View.WRONG_INPUT_VALUE + View.INPUT_HELLO_VALUE);
+	private String processUserInput(Scanner scanner, String message, String pattern) {
+		view.printMessage(message);
+		while (!scanner.hasNext(pattern)) {
+			view.printMessage(View.WRONG_INPUT_VALUE + message);
 			scanner.next();
 		}
-		return scanner.next(HELLO_VALUE_PATTERN);
-	}
+		return scanner.next(pattern);
 
-	private String processWorldInput(Scanner scanner) {
-		view.printMessage(View.INPUT_WORLD_VALUE);
-		while (!scanner.hasNext(WORLD_VALUE_PATTERN)) {
-			view.printMessage(View.WRONG_INPUT_VALUE + View.INPUT_WORLD_VALUE);
-			scanner.next();
-		}
-		return scanner.next(WORLD_VALUE_PATTERN);
 	}
 
 }

@@ -8,7 +8,7 @@ public class Main {
 		View view = new View();
 		Controller controller = new Controller(model, view);
 
-		controller.processUserInput();
+		controller.processUser();
 	}
 
 }

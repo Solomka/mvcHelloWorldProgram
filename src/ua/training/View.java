@@ -5,10 +5,10 @@ package ua.training;
  */
 public class View {
 
-	public static String INPUT_HELLO_VALUE = "Input \"Hello\" value: ";
-	public static String INPUT_WORLD_VALUE = "Input \"world!\" value: ";
-	public static String WRONG_INPUT_VALUE = "Wrong input. Try again! ";
-	public static String HELLO_WORLD_VALUE = "Greeting: ";
+	static String INPUT_HELLO_VALUE = "Input \"Hello\" value: ";
+	static String INPUT_WORLD_VALUE = "Input \"world!\" value: ";
+	static String WRONG_INPUT_VALUE = "Wrong input. Try again! ";
+	static String HELLO_WORLD_VALUE = "Greeting: ";
 
 	public void printMessage(String gMessage) {
 		System.out.println(gMessage);
