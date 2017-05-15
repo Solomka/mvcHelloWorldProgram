@@ -5,7 +5,7 @@ import java.util.Scanner;
 /**
  * Created by Solomka on 11.04.2017
  */
-public class Controller {
+class Controller {
 
 	static String HELLO_VALUE_PATTERN = "Hello";
 	static String WORLD_VALUE_PATTERN = "world!";
@@ -13,12 +13,12 @@ public class Controller {
 	private Model model;
 	private View view;
 
-	public Controller(Model model, View view) {
+	Controller(Model model, View view) {
 		this.model = model;
 		this.view = view;
 	}
 
-	public void processUser() {
+	void processUser() {
 		Scanner scanner = new Scanner(System.in);
 
 		String hello = processUserInput(scanner, View.INPUT_HELLO_VALUE, HELLO_VALUE_PATTERN);
